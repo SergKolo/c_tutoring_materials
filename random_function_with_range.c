@@ -63,10 +63,14 @@ int rand_int1 (int a, int b)
       * Thus, what happens here is simply adding a certain number to 
       * minimum value (which is a) to stay within range. 
       *
+      * The 1 in (b - a + 1) is to ensure we're not dividing by 0
+      *
       * Say rand() gave us 9347. We  need values from 200 to 100.
       * So we know we need to add to 100 some number between 100 and 200 
       * to stay in range, and that number will come from integer division
-      * 
+      * So knowing that remainder of integer division will always be from 
+      * 0 to divisor , 9347 / (200 - 100 + 1) will give us remainder of 55.
+      * So 55 + 100 is 155. Here's your random number in range!
       */
 
       int randValue;
