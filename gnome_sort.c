@@ -65,10 +65,7 @@ int main()
 
     gnome_sort(num_states,len,states);
 
-    printf("\n>>> Sorted array:\n");
-    for (int i = 0; i<num_states;i++)
-        printf("\nstate %d:%s",i,states[i]);
-
+    print_array(num_states,len,states);
 
     return 0;
 }
