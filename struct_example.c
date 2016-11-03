@@ -23,6 +23,13 @@ int main()
     struct person_data *address = students; // address of first
     struct person_data *last;               // address of last
 
+    // Another way to do the same thing
+    struct person_data *test;
+    test = &students[0];
+ 
+    if (test == address)
+       printf("test %p and address %p are the same\n",test,address); 
+
     for(int i=0;i<3;i++){
         printf("Enter name:");
         char buffer[sizeof(students[i].name)];
