@@ -43,7 +43,7 @@ int main()
         last = &students[i]; // remember address of last item
     }
     
-        while(address != last) {
+        while(address != last+1) {
             printf("%s,%d\n",address->name,address->age);
             address++; // adding +1 to pointer is equivalent to moving address
                        // by size of the data you're referencing 
