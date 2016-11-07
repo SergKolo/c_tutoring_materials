@@ -25,8 +25,8 @@ int main()
             arr[i][j] = rand_int(100,200);
 
     // This is where pointer magic happens:
-    // we keep printing until we've not reached
-    // the end of array
+    // we keep printing until we go past the last
+    // item. At that point we'll get out of the loop
     while ( address != last+1 ){
         printf("Address: %p, Value: %d\n",address,*address);
         address++;
