@@ -4,7 +4,7 @@
 
 int main(){
 
-    int degree;
+    int degree=0;
     printf(">>> Enter polynomial degree:\n");
     scanf("%d",&degree);
 
@@ -12,7 +12,7 @@ int main(){
     printf("For example: A*x^0 + B*x^1 + C*x^2...\n");
 
     double *coefficients;
-    coefficients = malloc(degree * sizeof(double));
+    coefficients = (double *)malloc(degree * sizeof(double));
 
     for(int i=0; i<=degree; i++){
         printf(">>> Enter coefficient #%d:\n",i);
@@ -21,22 +21,22 @@ int main(){
 
     printf(">>> Enter limits of integration\n");
 
-    double a,b;
+    double a=0;
+    double b=0;
     printf(">>> a:");
     scanf("%lf",&a);
     printf(">>> b:");
     scanf("%lf",&b);
 
     // step size h
-    double h;
-    h = (b-a)/10;
+    double h=(b-a)/10;
 
     /*
         We need to iterate over all trapezoids, calculating
         F(x) at each edge.
      */
 
-    double x,y,integral;
+    double x=0.0,y=0.0,integral=0.0;
     for(int i=1;i<=9;i++){
 
        x = a + i*h;
@@ -55,7 +55,7 @@ int main(){
      Now we need to compute F(x) at the edges
      and add the remaining value to the integral
      */
-    double y_a,y_b;
+    double y_a=0,y_b=0;
     
     for(int j=0;j<=degree;j++){
         y_a += coefficients[j] * pow(a,j);
@@ -67,6 +67,8 @@ int main(){
 
     printf(">>> Integral using trapezoidal rule of this polynomial is:\n");
     printf("%lf\n",integral*h);
+
+	getchar();
 
     return 0;
 }
